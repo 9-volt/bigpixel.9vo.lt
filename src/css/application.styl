@@ -1,2 +1,29 @@
-body
+html, body
   margin 0
+  background #3b9bcc
+  font-family: 'Montserrat', sans-serif;
+
+@require "slick"
+
+.pageheader
+  height 300px
+  max-width 800px
+  margin 0 auto
+
+  &__link
+    text-transform uppercase
+    color white
+    text-decoration none
+    position relative
+    font-size 16px
+
+    &:hover
+      text-decoration underline
+
+    &:nth-child(1)
+      top 84px
+      left 104px
+
+    &:nth-child(2)
+      top 105px
+      left 536px
