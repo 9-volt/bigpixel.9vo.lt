@@ -1,0 +1,15 @@
+# Generic
+node_modules
+.tmp
+.DS_Store
+.htaccess
+
+# Ignore wordpress except bigpixel theme
+/app/*
+!/app/wp-content
+/app/wp-content/*
+!/app/wp-content/themes
+/app/wp-content/themes/*
+!/app/wp-content/themes/bigpixel
+/app/wp-content/themes/bigpixel/css/application*.css
+/app/wp-content/themes/bigpixel/editor-style.css
