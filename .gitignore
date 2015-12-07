@@ -3,6 +3,7 @@ node_modules
 .tmp
 .DS_Store
 .htaccess
+TODO.md
 
 # Ignore wordpress except bigpixel theme
 /app/*

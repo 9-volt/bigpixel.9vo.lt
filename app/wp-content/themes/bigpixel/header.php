@@ -18,15 +18,15 @@
 	<!--[if lt IE 9]>
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
 	<![endif]-->
-	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Raleway:300|Montserrat:400,700' rel='stylesheet' type='text/css'>
 	<?php wp_head(); ?>
 </head>
 
-<body>
-<div id="page" class="hfeed site">
-	<?php if ( is_front_page() && is_home() ) : ?>
+<body class="<?php if ( (is_front_page() && is_home()) || is_page(2) ) {echo 'home';} ?>">
+<div id="page" class="hfeed site ">
+	<?php if ( (is_front_page() && is_home()) || is_page(2) ) : ?>
 	<div class="pageheader">
-		<a href="#portofolio" class="pageheader__link">Portofolio</a>
-		<a href="#contacts" class="pageheader__link">Contacts</a>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="pageheader__link">Portofolio</a>
+		<a href="<?php echo get_page_link(2); ?>" class="pageheader__link">Contacts</a>
 	</div>
 	<?php endif; ?>

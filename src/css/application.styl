@@ -1,14 +1,37 @@
+@import 'nib'
+
+$textFont = 'Raleway', sans-serif
+
 html, body
   margin 0
-  background #3b9bcc
+  background white
   font-family: 'Montserrat', sans-serif;
+  height 100%
+
+// .home, .slider-wrapper
+
+.home
+  background #3b9bcc
+  background linear-gradient(top, #369bcd, #91adda)
+
+  .site
+    min-height 100%
+    background-image url(../images/land.png), url(../images/footer.png), url(../images/mountains-left.png), url(../images/mountains-right.png)
+    background-size 861px 210px, 1px 206px, 311px 425px, 440px 516px
+    background-repeat no-repeat, repeat-x, no-repeat, no-repeat
+    background-position 50% 100%, 0 100%, 0 100%, 100% 100%
 
 @require "slick"
 
 .pageheader
-  height 300px
+  position relative
+  height 302px
   max-width 800px
   margin 0 auto
+  background-image url(../images/clouds.png)
+  background-size 905px 219px
+  background-repeat no-repeat
+  background-position 50% 28px
 
   &__link
     text-transform uppercase
@@ -22,8 +45,189 @@ html, body
 
     &:nth-child(1)
       top 84px
-      left 104px
+      left 55px
 
     &:nth-child(2)
-      top 105px
-      left 536px
+      position absolute
+      top 103px
+      right 118px
+
+hover-content()
+  display flex
+  align-items center
+  background rgba(#1B9B82, 0.9) // Set from HTML
+  font-size 21px
+  cursor pointer
+  opacity 0.9
+  text-decoration none
+  color white
+
+  .hover-content-inner
+    // Necessary to vertically align content
+
+  h2
+    font-size 20px
+    text-transform uppercase
+    font-weight normal
+    padding 0
+    margin 0 0 0 74px
+    // padding 4px 0
+    position relative
+    letter-spacing 0.03em
+    display inline-block
+
+    .delimiter
+      display block
+      position absolute
+      top 28px
+      left 0
+      height 1px
+      width 136px
+      background white
+
+  p
+    font-family $textFont
+    padding 0
+    margin 18px 70px 0 74px
+
+    a
+      color white
+
+
+.slider-wrapper
+  position relative
+
+  .slick-slide
+    width 560px
+    height 260px
+    border 20px solid rgba(#ffffff, 0.3)
+    margin 0 25px
+    transition border-color 1s
+    position relative
+
+    a
+      display inline-block
+
+    &:hover
+      .hover-content
+        display flex
+
+    &.slick-current
+      border-color rgba(#ffffff, 0.5)
+
+    @media (max-width: 700px)
+      width 100%
+      height auto
+      border-width 10px
+      margin 0
+
+      img
+        width 100%
+        height auto
+
+    .hover-content
+      hover-content()
+      display none
+      position absolute
+      top 0
+      left 0
+      right 0
+      bottom 0
+
+  .slick-arrow
+    position absolute
+    top 50%
+    left 50%
+    font-size 0
+    border 0
+    background 0
+    width 32px
+    height 54px
+    padding 0
+    margin -27px 0 0 -345px
+    outline none
+    cursor pointer
+
+    &.slick-prev
+      1
+
+    &.slick-next
+      left auto
+      right 50%
+      margin -27px -337px 0 0
+
+      &:before
+        transform rotate(-45deg)
+
+      &:after
+        transform rotate(45deg)
+
+    &:before,
+    &:after
+      content ''
+      display block
+      position absolute
+      top 0
+      left 0
+      width 38px
+      height 6px
+      background white
+
+    &:before
+      transform rotate(45deg)
+      top 38px
+
+    &:after
+      transform rotate(-45deg)
+      top 15px
+
+.article-single
+  background white
+  .header
+    .hover-content
+      hover-content()
+      height 260px
+
+  .content
+    &:after
+      content ''
+      display table
+      clear both
+
+    .content-image
+      width 50%
+      float left
+
+      img
+        width 100%
+        height auto
+        display block
+
+    .content-text
+      width 50%
+      float left
+      background white
+      color black
+      font-size 17px
+      padding 26px 32px
+      box-sizing border-box
+      font-weight 300
+
+      &:after
+        content ''
+        display table
+        clear both
+
+      &.content-text-full
+        width 100%
+        float none
+
+      .content-title
+        font-size 21px
+        text-transform uppercase
+        font-weight 400
+        margin 0
+        padding 0
+
+      p
+        1
